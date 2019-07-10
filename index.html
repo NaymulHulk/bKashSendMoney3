@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Send Money 3</title>
+     <meta class="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.com/en_US/messenger.Extensions.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'Messenger'));
+    window.extAsyncInit = () =>
+    {
+        document.getElementById('closeButton').addEventListener('click', function () {
+            MessengerExtensions.requestCloseBrowser(function success() {
+                console.log("Webview closing");
+            }, function error(err) {
+                console.log(err);
+            });
+        });
+    }
+</script>
+
+
+
+
+<center>
+PIN:<br>
+  <input type="number" name="Receiver" value="">
+  <br>
+  <br>
+ <input type="submit" value="Send">
+  </center>
+
+  
+  </body>
