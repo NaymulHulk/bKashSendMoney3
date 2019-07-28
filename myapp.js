@@ -5,6 +5,8 @@ function validate3() {
 
     console.log(inputPIN);
 
+    inputPIN = Number(inputPIN);
+
     if ((inputPIN > 99999) || (inputPIN < 10000)) {
         bootbox.alert({
             message: "PIN should be of 5 digits.",
