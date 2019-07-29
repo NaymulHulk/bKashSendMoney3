@@ -23,10 +23,28 @@ function validate3() {
     }
 
     else {
-        bootbox.alert({
-            message: "Your money has been sent",
-            size: 'medium'
+        var dialog = bootbox.dialog({
+            title: 'Send Money Confirmation',
+            message: "<p>You are sending money. Click 'Send Money' to confirm</p>",
+            size: 'large',
+            buttons: {
+                cancel: {
+                    label: "Cancel",
+                    className: 'btn-danger',
+                    callback: function () {
+                        console.log('Custom cancel clicked');
+                    }
+                },
+                ok: {
+                    label: "Send Money",
+                    className: 'btn-info',
+                    callback: function () {
+                        location.href = "https://www.bkash.com/";
+                    }
+                }
+            }
         });
+
         return true;
     }
 }
